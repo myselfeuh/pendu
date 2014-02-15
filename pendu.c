@@ -2,6 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
+#include "pendu.h"
 
 char pendu_lireCaractere() {
 	char caractere = 0;
@@ -27,12 +28,13 @@ int pendu_yaLettre(char caractere, char mot_secret[]) {
 	for (i = 0; mot_secret[i] != '\0'; i++) {
 		if (mot_secret[i] == caractere) {
 			return 1;
-		} else
-			return 0;
+		}
 	}
+	return 0;
 }
 
-void pendu_remplaceLettre(char caractere, char mot_secret[] , char *p_mot_affiche[]) {
+/* ecrit la lettre donnee en parametre au bon(s) endroit(s) dans le mot a afficher */
+void pendu_remplacerLettre(char caractere, char mot_secret[] , char (*p_mot_affiche)[TAILLE]) {
 	int i;
 	for (i = 0; mot_secret[i] != '\0'; i++) {
 		if (caractere == mot_secret[i]) {

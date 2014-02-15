@@ -5,7 +5,7 @@ PGM = pendu.exe
 # Ici, la liste des fichiers objets à considérer,
 # séparés par des espaces
 # ex : OBJS = personne.o main.o toto.o
-OBJS = pendu.o pendu.h
+OBJS = pendu.o jeu.o
 
 #----------------------------------------
 # Plus rien à modifier à partir d'ici
